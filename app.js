@@ -21,19 +21,30 @@ todoList.addEventListener("click", deleteCheck);
 function addTodo(event){
     // Prevent form from submitting
     event.preventDefault();
+  
+    let nanval = todoInput.value; // user input list 'task'
     
+    if (!nanval){
+        alert("plese write");
+        return;
+    }
+
+
+
     // Todo div // create div 
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
 
     //create LI 'list'
+   
     const newTodo = document.createElement("li");
     newTodo.innerText = todoInput.value; // user input list 'task'
+
     newTodo.classList.add('todo-item');
+    console.log(newTodo)
 
     // inherit list into div "perent 'div' and child 'list' "
     todoDiv.appendChild(newTodo);
-
 
 
     // button "complete, remove, edit"
@@ -91,7 +102,7 @@ function deleteCheck(e){
         const todo = item.parentElement;
         todo.classList.toggle("completed");
         // alert('complete task')-----------
-        console.log(todo)
+        // console.log(todo)
     }
 
     // for edit btn
