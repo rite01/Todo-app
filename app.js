@@ -29,8 +29,6 @@ function addTodo(event){
         return;
     }
 
-
-
     // Todo div // create div 
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
